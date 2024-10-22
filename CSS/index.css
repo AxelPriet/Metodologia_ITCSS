@@ -1,0 +1,99 @@
+/* Settings (Configuraciones) */
+:root {
+    --main-color: #3498db;
+    --text-color: #333;
+    --bg-color: #f5f5f5;
+    --font-family: 'Poppins', sans-serif;
+    --title-font-family: 'Lobster', cursive;
+}
+
+/* Generic */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main layout */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content__sections {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; /* Permite el ajuste flexible de las secciones */
+    flex: 1;
+}
+
+/* Section Background */
+.flex-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+    transition: flex 0.5s ease-in-out;
+    text-align: center;
+    min-width: 20%;
+    background-color: #d0e8ff; /* Fondo azul claro */
+    border-radius: 10px; /* Opcional: bordes redondeados para un mejor estilo */
+}
+
+.flex-item:hover {
+    flex: 3;
+    background-color: #f0f0f0;
+}
+
+
+/* Titles */
+.section__title {
+    font-family: var(--title-font-family);
+    font-size: 2.5rem;
+    color: var(--main-color);
+    text-align: center;
+    width: 100%; /* Asegura que el título ocupe todo el ancho de la sección */
+}
+
+/* Section Content */
+.section__text, .section__list-item {
+    font-size: 1rem;
+}
+
+.section__code {
+    font-family: 'Courier New', monospace;
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+/* Footer */
+.footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin-top: auto; /* Esto asegura que el footer esté al final */
+}
+
+.footer__text {
+    font-size: 0.9rem;
+}
+
+
+
