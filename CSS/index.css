@@ -73,13 +73,27 @@ main {
     font-size: 1rem;
 }
 
+.content__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Añadir algo de espacio alrededor */
+}
+
 .section__code {
     font-family: 'Courier New', monospace;
     background-color: #eee;
     padding: 15px;
     border-radius: 5px;
     text-align: left;
+    width: 100%; /* Asegura que el código ocupe el ancho completo de la sección */
+    overflow-x: auto; /* Permite el desplazamiento horizontal si el contenido es demasiado largo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional para mejorar la visibilidad */
+    white-space: pre-wrap; /* Permite que el texto se ajuste a la línea */
+    word-wrap: break-word; /* Rompe las palabras largas para ajustarse */
 }
+
 
 /* Footer */
 .footer {
