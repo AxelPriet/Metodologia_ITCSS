@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="CSS/index.css">
 </head>
+
 <body>
 
     <!-- Header -->
@@ -22,9 +24,9 @@
         </div>
     </header>
 
-    <!-- Main Content - Horizontal layout -->
+    <!-- Main Content - Grid layout -->
     <main class="content">
-        <div class="container-fluid d-flex content__sections">
+        <div class="container-fluid content__sections">
             <!-- Significado -->
             <section class="content__section flex-item">
                 <h2 class="section__title">Significado</h2>
@@ -55,29 +57,82 @@
             <!-- Ejemplo de uso -->
             <section class="content__section flex-item">
                 <h2 class="section__title">Ejemplo de Uso</h2>
-                <div style="flex: 1; display: flex; justify-content: center; align-items: center; width: 100%;">
-                    <pre class="section__code">
+                <pre class="section__code">
 &lt;div class="container"&gt;
       &lt;h1 class="header__title"&gt;Ejemplo de Título&lt;/h1&gt;
      &lt;p class="text--center"&gt;Este es un párrafo centrado.&lt;/p&gt;
  &lt;/div&gt;
-                    </pre>
-                </div>
+                </pre>
             </section>
-            
+
+            <!-- Aplicacion -->
+            <section class="content__section flex-item">
+                <h2 class="section__title">Aplicacion</h2>
+                <p class="section__text">
+                    El código definido en las capas superiores tiene un impacto mayor que el definido en las capas inferiores. 
+                    Así, las capas superiores afectan a las inferiores, pero nunca al revés. Las capas inferiores heredarán los estilos de sus superiores.
+                </p>
+                <img class="object" src="https://lh5.googleusercontent.com/444COS9a2NkcThrLfpZ1kPQIrNmpx45qKBDTTkuoe1zMv_ARAc7nOpfmLVMHQvHYa_9qrXEU4E1imJLOO2FhoVWFFowURADr6dsj6vc717Aqm_RvVRgeCEIZG4xTW04_itnj5pD9">
+            </section>
+
+            <!-- Additional Sections -->
+            <section class="content__section flex-item">
+                <h1 class="section__title">Configuración</h1>
+                <p class="section__text">
+                    Aquí es donde se definen las variables cuando se utiliza un preprocesador. No genera CSS.
+                </p>
+                <p class="section__text">
+                    $main-color: #6834cb
+                </p>
+            </section>
+
+            <section class="content__section flex-item">
+                <h1 class="section__title">Herramientas</h1>
+                <p class="section__text">
+                    Si se utiliza preprocesador, en esta capa se definen funciones y mixins. Al igual que la anterior, no genera CSS.
+                </p>
+                <p class="section__text">
+                    @función suma($números...) {
+                        $suma: 0;
+                        @cada $número en $números {
+                            $suma: $suma + $número;
+                        }
+                        @devuelve $suma;
+                    }
+                </p>
+            </section>
+
+            <!-- Estructura ITCSS -->
+            <section class="content__section flex-item">
+                <h1 class="section__title">Como implementar ITCSS en un proyecto</h1>
+                <p class="section__text">
+                    Supongamos que utilizamos SASS como preprocesador de CSS para estructurar nuestro proyecto, de modo que quedaría así:
+                </p>
+                <img class="object" src="https://lh5.googleusercontent.com/n2ZxeiTQDF15L2gE9jhwy6eAVroJOg_BrL5ZdhIKYEgUR6JC4zogUDErJeD5RtuA0Vx8aUtla3uje5UJAjHJaeMSMxX5r74-F4PSVaeebfUNl2IOkbafeVCPBpwt0fos-aHD-NAX">
+            </section>
+
+            <section class="content__section flex-item">
+                <h1 class="section__title">Archivo Principal</h1>
+                <p class="section__text">
+                    Esta será el archivo principal con todas las importaciones compiladas en un único CSS que utilizará nuestra aplicación. 
+                    Esto es mucho más ligero, limpio y no tenemos que preocuparnos de añadir más archivos aquí.
+                </p>
+                <img class="object" src="https://lh4.googleusercontent.com/uCpv7dDnDFJuA-ZbymjE2Lgmf8E_ATJllkJirbqj7M0bL1HmA4vMXJJIORr56vHdN_hz-ltguVzChC5YWUrAupPCUIirp6VXsrzGRqLIEKNFHO8pQaW3pClLdCwxdkbDxy2Qs-0D">
+            </section>
         </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer py-3 bg-dark text-light">
         <div class="container text-center">
-            <p class="footer__text">Referencias: ITCSS - Inverted Triangle CSS</p>
+            <p class="footer__text">Referencias:</p>
+            <a href="https://apiumhub.com/tech-blog-barcelona/inverted-triangle-architecture-for-css-itcss/">https://apiumhub.com/tech-blog-barcelona/inverted-triangle-architecture-for-css-itcss/</a>
         </div>
     </footer>
 
 </body>
-</html>
 
+</html>
 
 
 

@@ -32,10 +32,10 @@ main {
 }
 
 .content__sections {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap; /* Permite el ajuste flexible de las secciones */
-    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mínimo de 300px por columna */
+    grid-gap: 20px; /* Espacio entre filas y columnas */
+    padding: 20px;
 }
 
 /* Section Background */
@@ -44,41 +44,29 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 1;
     padding: 20px;
-    transition: flex 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     text-align: center;
-    min-width: 20%;
-    background-color: #d0e8ff; /* Fondo azul claro */
-    border-radius: 10px; /* Opcional: bordes redondeados para un mejor estilo */
+    background-color: #d0e8ff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .flex-item:hover {
-    flex: 3;
+    transform: scale(1.05);
     background-color: #f0f0f0;
 }
-
 
 /* Titles */
 .section__title {
     font-family: var(--title-font-family);
     font-size: 2.5rem;
     color: var(--main-color);
-    text-align: center;
-    width: 100%; /* Asegura que el título ocupe todo el ancho de la sección */
 }
 
 /* Section Content */
 .section__text, .section__list-item {
     font-size: 1rem;
-}
-
-.content__section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px; /* Añadir algo de espacio alrededor */
 }
 
 .section__code {
@@ -87,13 +75,18 @@ main {
     padding: 15px;
     border-radius: 5px;
     text-align: left;
-    width: 100%; /* Asegura que el código ocupe el ancho completo de la sección */
-    overflow-x: auto; /* Permite el desplazamiento horizontal si el contenido es demasiado largo */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional para mejorar la visibilidad */
-    white-space: pre-wrap; /* Permite que el texto se ajuste a la línea */
-    word-wrap: break-word; /* Rompe las palabras largas para ajustarse */
+    width: 100%;
+    overflow-x: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
+.object {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
 
 /* Footer */
 .footer {
@@ -102,7 +95,7 @@ main {
     text-align: center;
     padding: 10px;
     width: 100%;
-    margin-top: auto; /* Esto asegura que el footer esté al final */
+    margin-top: auto;
 }
 
 .footer__text {
